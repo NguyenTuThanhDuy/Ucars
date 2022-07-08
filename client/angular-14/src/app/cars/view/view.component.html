@@ -1,0 +1,18 @@
+<p>view works!</p>
+<h1 *ngIf="listCarBrand">Displaying {{listCarBrand.length}} brands</h1>
+<div class="main-content">
+        <mat-card class="list-brands" role="listitem" *ngFor="let carBrand of listCarBrand">
+            <mat-card-title>
+                {{carBrand.name}}
+            </mat-card-title>
+            <mat-card-content>
+                {{carBrand.national}}
+            </mat-card-content>
+            <mat-card-actions>
+                <a class="action-link" [routerLink]="['/view/view-detail',carBrand.id]">View</a>
+            |
+            <a class="action-link" [routerLink]="['/view/edit',carBrand.id]">Edit</a>
+            | <a class="action-link" [routerLink]="['/view/delete',carBrand.id]">Delete</a>
+            </mat-card-actions>
+        </mat-card>
+</div>
