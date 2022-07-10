@@ -8,10 +8,10 @@
         <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
             <input matInput placeholder="Brand Name" formControlName = "name">
-            <mat-error *ngIf="addCarBrandForm.controls['name'].errors && addCarBrandForm.controls['name'].hasError('required')">
+            <mat-error *ngIf="edit_brand_form.controls['name'].errors && edit_brand_form.controls['name'].hasError('required')">
                 Brand name is required
             </mat-error>
-            <mat-error *ngIf="addCarBrandForm.controls['name'].errors && addCarBrandForm.controls['name'].hasError('minlength')">
+            <mat-error *ngIf="edit_brand_form.controls['name'].errors && edit_brand_form.controls['name'].hasError('minlength')">
                 Brand name should have at least 3 characters
             </mat-error>
             <mat-hint>Brand Name</mat-hint>
@@ -21,10 +21,10 @@
         <mat-form-field appearance="outline">
             <mat-label>National</mat-label>
             <input matInput placeholder="Brand Nation" formControlName = "national">
-            <mat-error *ngIf="addCarBrandForm.controls['national'].errors && addCarBrandForm.controls['national'].hasError('required')">
+            <mat-error *ngIf="edit_brand_form.controls['national'].errors && edit_brand_form.controls['national'].hasError('required')">
                 Brand nation is required
             </mat-error>
-            <mat-error *ngIf="addCarBrandForm.controls['national'].errors && addCarBrandForm.controls['national'].hasError('minlength')">
+            <mat-error *ngIf="edit_brand_form.controls['national'].errors && edit_brand_form.controls['national'].hasError('minlength')">
                 Brand nation should have at least 2 characters
             </mat-error>
             <mat-hint>Nation</mat-hint>
