@@ -1,29 +1,49 @@
 <mat-card>
     <mat-card-title>Create Car Brand</mat-card-title>
-    <form [formGroup] = "addCarBrandForm" (submit) = "createCarBrand()">
-        <p>
-            <mat-form-field appearance="outline">
-                <mat-label>Name</mat-label>
-                <input matInput placeholder="Brand Name" formControlName = "name">
-                <mat-hint>Hint</mat-hint>
-            </mat-form-field>
-        </p>
-        <p>
-            <mat-form-field appearance="outline">
-                <mat-label>National</mat-label>
-                <input matInput placeholder="Brand Nation" formControlName = "national">
-                <mat-hint>Hint</mat-hint>
-            </mat-form-field>
-        </p>
-        <p>
-            <mat-form-field appearance="outline">
-                <mat-label>Status</mat-label>
-                <input matInput placeholder="Status" formControlName = "status">
-                <mat-hint>Hint</mat-hint>
-            </mat-form-field>
-        </p>
-        <p>
-            <button mat-stroked-button color="primary">Create Car Brand</button>
-        </p>
-    </form>    
+    <mat-card-content>
+        <div>
+            <form [formGroup] = "addCarBrandForm" (submit) = "createCarBrand()" appFocus>
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Brand Name" formControlName = "name">
+                        <mat-error *ngIf="addCarBrandForm.controls['name'].errors && addCarBrandForm.controls['name'].hasError('required')">
+                            Brand name is required
+                        </mat-error>
+                        <mat-error *ngIf="addCarBrandForm.controls['name'].errors && addCarBrandForm.controls['name'].hasError('minlength')">
+                            Brand name should have at least 3 characters
+                        </mat-error>
+                        <mat-hint>Brand Name</mat-hint>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>National</mat-label>
+                        <input matInput placeholder="Brand Nation" formControlName = "national">
+                        <mat-error *ngIf="addCarBrandForm.controls['national'].errors && addCarBrandForm.controls['national'].hasError('required')">
+                            Brand nation is required
+                        </mat-error>
+                        <mat-error *ngIf="addCarBrandForm.controls['national'].errors && addCarBrandForm.controls['national'].hasError('minlength')">
+                            Brand nation should have at least 2 characters
+                        </mat-error>
+                        <mat-hint>Nation ?</mat-hint>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Status</mat-label>
+                        <select matNativeControl formControlName="status">
+                            <option *ngFor="let s of status" [value]="s.value">
+                              {{s.viewValue}}
+                            </option>
+                        </select>
+                        <mat-hint>Active ?</mat-hint>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <button mat-raised-button color="primary" [disabled]="!addCarBrandForm.valid">Create Car Brand</button>
+                </p>
+            </form>
+        </div>
+    </mat-card-content>
 </mat-card>

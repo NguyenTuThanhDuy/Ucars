@@ -1,7 +1,15 @@
 <p>view-detail works!</p>
 <mat-card class ="brand-details" *ngIf="brand_details">
-    <mat-card-title>{{brand_details.name}}</mat-card-title>
+    <mat-card-title>Brand Name</mat-card-title>
+    <mat-card-content>
+        {{brand_details.name}}
+    </mat-card-content>
+    <mat-card-title>Brand Nation</mat-card-title>
     <mat-card-content>
         {{brand_details.national}}
+    </mat-card-content>
+    <mat-card-title>Is Brand Active ?</mat-card-title>
+    <mat-card-content>
+        {{brand_details.status}}
     </mat-card-content>
 </mat-card>
