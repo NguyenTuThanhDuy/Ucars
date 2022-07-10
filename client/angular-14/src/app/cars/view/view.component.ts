@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewComponent implements OnInit {
   listCarBrand : any;
+  searchText : any;
   constructor(private carService:CarService) { }
 
   ngOnInit(): void {

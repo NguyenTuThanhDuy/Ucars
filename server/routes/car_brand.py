@@ -9,11 +9,11 @@ brand = APIRouter()
 
 @brand.get('/brands')
 async def find_all_car_brands():
-    return brandsEntity(conn.ucars.car_brand.find())
+    return brandsEntity(conn.ucars.car_brand.find({"status":True}))
 
 @brand.get('/brands/{id}')
-async def find_car_brand():
-    return brandEntity(conn.ucars.car_brand.find({"_id":ObjectId(id)}))
+async def find_car_brand(id):
+    return brandEntity(conn.ucars.car_brand.find_one({"_id":ObjectId(id)}))
 
 @brand.post('/brand')
 async def create_car_brand(brand : CarBrand):

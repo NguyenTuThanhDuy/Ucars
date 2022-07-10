@@ -16,17 +16,18 @@ const routes: Routes = [
         path: '',component:ListComponent
       },
       {
+        path:'view-detail/:id',component:ViewDetailComponent
+      },
+      {
+        path:'edit/:id',component:EditComponent
+      },
+      {
+        path:'delete/:id',component:DeleteComponent
+      },
+      {
         path: 'view',component:ViewComponent,
         children: [
-          {
-            path:'view-detail',component:ViewDetailComponent
-          },
-          {
-            path:'edit/:id',component:EditComponent
-          },
-          {
-            path:'delete/:id',component:DeleteComponent
-          },
+          
         ]
       },
       
