@@ -41,6 +41,15 @@
                     </mat-form-field>
                 </p>
                 <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Select Image</mat-label>
+                        <input #imageInput
+                            type="file"
+                            accept="image/*"
+                            (change)="processFile(imageInput)">
+                    </mat-form-field>
+                </p>
+                <p>
                     <button mat-raised-button color="primary" [disabled]="!addCarBrandForm.valid">Create Car Brand</button>
                 </p>
             </form>

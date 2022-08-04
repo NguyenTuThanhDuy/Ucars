@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CarService } from './../services/car.service';
 import { Component, NgModule, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
+
 interface Status {
   value: boolean;
   viewValue: string;
@@ -14,7 +15,6 @@ interface Status {
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-
   addCarBrandForm : FormGroup = new FormGroup({});
   status:Status[] =[
     {value:true,viewValue:'Active'},
@@ -23,7 +23,8 @@ export class CreateComponent implements OnInit {
   constructor(private formBuilder : FormBuilder,
     private carService : CarService,
     private _snackBar : MatSnackBar,
-    private router:Router) { }
+    private router:Router,
+    private imageService: ImageService) { }
   ngOnInit(): void {
     this.addCarBrandForm = this.formBuilder.group({
       'name' : new FormControl('',[Validators.required,Validators.minLength(3)]),

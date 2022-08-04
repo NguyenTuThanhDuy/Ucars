@@ -1,5 +1,8 @@
 <p>view-detail works!</p>
 <mat-card class ="brand-details" *ngIf="brand_details">
+    <mat-card-header fxLayout fxLayoutAlign="start center">
+        <img mat-card-avatar src="{{brand_details.avatar_url}}"/>
+    </mat-card-header>
     <mat-card-title>Brand Name</mat-card-title>
     <mat-card-content>
         {{brand_details.name}}

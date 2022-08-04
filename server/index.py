@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from routes.car import car
 from routes.car_model import model
 from routes.car_brand import brand
+from routes.avatar import avatar
 app = FastAPI()
 origins = [
     "http://localhost",
@@ -18,6 +19,7 @@ app.add_middleware(
 app.include_router(car)
 app.include_router(model)
 app.include_router(brand)
+app.include_router(avatar)
 @app.get("/")
 def root():
     return {"message":"Welcome to Summoner's Rift"}

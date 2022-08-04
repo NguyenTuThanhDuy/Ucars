@@ -3,7 +3,7 @@ def brandEntity(item) -> dict:
         "id" : str(item["_id"]),
         "name" : item["name"],
         "national" : item["national"],
-        "logo" : item["logo"],
+        "avatar_url" : item["avatar_url"],
         "status" : item["status"],
     }
 

@@ -40,7 +40,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ReactiveFormsModule,
     MatSnackBarModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule, 
   ]
 })
 export class CarsModule { }
